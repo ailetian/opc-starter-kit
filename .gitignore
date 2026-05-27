@@ -16,8 +16,10 @@ logs-*.zip
 
 # Raw source materials (not needed in repo, see links in README)
 anthropic_opc手册.txt
-docs/
 
-# User state files (generated during skill usage)
+# User runtime artifacts (generated during skill usage, never commit)
 .opc-state.json
+docs/
+*.log
+*.tmp
 
