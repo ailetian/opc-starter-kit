@@ -64,7 +64,7 @@ opc-starter-kit 就是那个敢跟你说真话的合伙人。它把一套**四�
 ## 🚀 安装
 
 ```bash
-git clone https://github.com/hhhkkllo/opc-starter-kit.git && cd opc-starter-kit
+git clone https://github.com/ailetian/opc-starter-kit.git && cd opc-starter-kit
 
 # 一行命令：
 ./install.sh /path/to/你的项目     # macOS / Linux

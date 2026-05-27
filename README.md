@@ -64,7 +64,7 @@ At every gate: **🔴 Red Team** (devil's advocate) + **🟢 Green Team** (exit 
 ## 🚀 Install
 
 ```bash
-git clone https://github.com/hhhkkllo/opc-starter-kit.git && cd opc-starter-kit
+git clone https://github.com/ailetian/opc-starter-kit.git && cd opc-starter-kit
 
 # One command:
 ./install.sh /path/to/your-project     # macOS / Linux
