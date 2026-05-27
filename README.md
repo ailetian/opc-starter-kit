@@ -63,32 +63,23 @@ At every gate: **🔴 Red Team** (devil's advocate) + **🟢 Green Team** (exit 
 
 ## 🚀 Install
 
-### One-Click (CodeBuddy / Claude Code / Cursor / Windsurf)
+### The Easy Way — Just send this link to your AI IDE:
 
-```bash
-# Install directly from GitHub — no clone needed
-npx skills add ailetian/opc-starter-kit --agent codebuddy -y
+```
+https://github.com/ailetian/opc-starter-kit
 ```
 
-Or for other agents:
+Tell your IDE: **"Install this skill"** — it reads `SKILL.md` and handles the rest.
+
+### Or use CLI:
 
 ```bash
-npx skills add ailetian/opc-starter-kit --agent claude-code -y
-npx skills add ailetian/opc-starter-kit --agent cursor -y
-npx skills add ailetian/opc-starter-kit --agent windsurf -y
+npx skills add ailetian/opc-starter-kit -y
 ```
 
-### Manual Install
+Then type **`opc`** to start.
 
-```bash
-git clone https://github.com/ailetian/opc-starter-kit.git && cd opc-starter-kit
-./install.sh /path/to/your-project     # macOS / Linux
-install.bat C:\path\to\your-project     # Windows
-```
-
-Then type **`opc`** in your AI tool — the skill takes over.
-
-> **Copilot, 通义灵码, Kimi** and other platforms: see [platform guide](skills/opc-starter-kit/references/tool-adaptations.md).
+> Works with **CodeBuddy, Claude Code, Cursor, Windsurf, Copilot, 通义灵码, Kimi** and any AgentSkills-compatible tool.
 
 ---
 

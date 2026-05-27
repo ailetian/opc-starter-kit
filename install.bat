@@ -10,7 +10,7 @@ REM   install.bat --global           global (~/.comate/skills/)
 setlocal enabledelayedexpansion
 
 set SKILL_NAME=opc-starter-kit
-set SKILL_SRC=%~dp0skills\%SKILL_NAME%
+set SKILL_SRC=%~dp0
 
 echo ==========================================
 echo   opc-starter-kit Installer
@@ -24,8 +24,8 @@ if /i "%~1"=="--global" goto :global
 if /i "%~1"=="-g" goto :global
 
 REM Check source
-if not exist "%SKILL_SRC%\skill.md" (
-    echo [ERROR] Skill source not found.
+if not exist "%SKILL_SRC%SKILL.md" (
+    echo [ERROR] SKILL.md not found.
     echo Run this script from the opc-starter-kit repository root.
     exit /b 1
 )
@@ -47,7 +47,7 @@ echo.
 echo Done! Open your AI tool in '%TARGET_DIR%' and type: opc
 echo.
 echo For other platforms (Cursor, Windsurf, etc.),
-echo see skills/opc-starter-kit/references/tool-adaptations.md
+echo see references/tool-adaptations.md
 goto :eof
 
 :global

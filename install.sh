@@ -10,7 +10,7 @@
 set -e
 
 SKILL_NAME="opc-starter-kit"
-SKILL_SRC="$(cd "$(dirname "$0")" && pwd)/skills/${SKILL_NAME}"
+SKILL_SRC="$(cd "$(dirname "$0")" && pwd)"
 
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
@@ -52,8 +52,8 @@ for arg in "$@"; do
 done
 
 # Check source
-if [ ! -f "$SKILL_SRC/skill.md" ]; then
-    echo -e "${RED}Error: skill source not found.${NC}"
+if [ ! -f "$SKILL_SRC/SKILL.md" ]; then
+    echo -e "${RED}Error: SKILL.md not found.${NC}"
     echo "Run this script from the opc-starter-kit repository root."
     exit 1
 fi
@@ -87,4 +87,4 @@ echo ""
 echo -e "${GREEN}Done! Open your AI tool in '${TARGET_DIR}' and type:${NC} ${BLUE}opc${NC}"
 echo ""
 echo -e "Tip: For Cursor, Windsurf, Copilot, or other tools,"
-echo -e "see ${BLUE}skills/opc-starter-kit/references/tool-adaptations.md${NC}"
+echo -e "see ${BLUE}references/tool-adaptations.md${NC}"
