@@ -80,7 +80,7 @@
 | anti-confirmation.md | 154 | **四种红队角色**（吝啬投资人/疲惫创始人/挑剔客户/通用竞品 CEO）、每种完整话术 |
 | exit-criteria.md | 135 | 四阶段完整边界情况处理、B2B 行业专家替代规则、重访协议 |
 | questioning-guide.md | 185 | 故事式五步流程、三角验证执行模板、各阶段专用话术 |
-| tool-adaptations.md | 120 | 通用术语映射表、Comate/DeepSeek/Kimi/通义灵码/Dify/Coze 适配说明 |
+| tool-adaptations.md | 120 | 通用术语映射表、your AI coding tool/DeepSeek/Kimi/通义灵码/Dify/Coze 适配说明 |
 
 **references/ 质量评分：8.5/10**
 - 扣 1.5 分：

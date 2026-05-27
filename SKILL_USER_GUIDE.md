@@ -311,7 +311,7 @@ opc-starter-kit 的任务文件设计天然支持并行。当主控窗口告诉�
 在你的项目目录下：
 
 1. 下载/克隆本仓库
-2. 把 `.comate/skills/opc-starter-kit/` 目录复制到你的项目下的 `.comate/skills/opc-starter-kit/`
+2. 把 `.your AI coding tool/skills/opc-starter-kit/` 目录复制到你的项目下的 `.your AI coding tool/skills/opc-starter-kit/`
 3. 打开对话框，输入：
    opc 启动
    我的项目：[一句话]

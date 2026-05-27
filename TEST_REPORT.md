@@ -6,7 +6,7 @@
 
 ## A. 执行摘要
 
-1. **[CRITICAL] SKILL.md 架构错位且命名不一致。** 实际技能文件位于 `.comate/skills/opc-starter-kit/skill.md`（小写、嵌套），而 README、lint workflow 和 REQUIREMENTS.md 均引用项目根目录的 `SKILL.md`（大写）。CI lint 流程会全面失败，用户按 README 操作找不到技能文件。
+1. **[CRITICAL] SKILL.md 架构错位且命名不一致。** 实际技能文件位于 `.your AI coding tool/skills/opc-starter-kit/skill.md`（小写、嵌套），而 README、lint workflow 和 REQUIREMENTS.md 均引用项目根目录的 `SKILL.md`（大写）。CI lint 流程会全面失败，用户按 README 操作找不到技能文件。
 
 2. **[CRITICAL] 缺少 YAML frontmatter。** `skill.md` 以 `# opc-starter-kit — AI 创业纪律技能` 开头，没有 YAML frontmatter。lint workflow 的 `head -1 SKILL.md | grep -q "^---"` 检查会失败。REQ 11.4 要求的 `description` 字段缺失。
 
@@ -28,9 +28,9 @@
 - **需求规格**：REQUIREMENTS.md §11.1 规定 `SKILL.md` 位于项目根目录，≤500 行
 - **README 描述**：README.md 第 203 行列出 `SKILL.md` 位于根目录
 - **CI 检查**：`.github/workflows/lint-skill.yml` 检查根目录 `SKILL.md` 的行数、frontmatter、Claude 术语
-- **实际**：`SKILL.md`（大写/根目录）不存在；实际文件是 `.comate/skills/opc-starter-kit/skill.md`（小写/嵌套）
+- **实际**：`SKILL.md`（大写/根目录）不存在；实际文件是 `.your AI coding tool/skills/opc-starter-kit/skill.md`（小写/嵌套）
 - **影响**：CI 完全不可用；用户按文档找不到文件
-- **建议**：在项目根目录创建 `SKILL.md`，或在 `.comate/skills/opc-starter-kit/` 下创建大写 `SKILL.md`，并更新所有文档和 CI 路径
+- **建议**：在项目根目录创建 `SKILL.md`，或在 `.your AI coding tool/skills/opc-starter-kit/` 下创建大写 `SKILL.md`，并更新所有文档和 CI 路径
 
 #### [HIGH] 缺少 references/ 目录（8 个文件）
 - **需求**：REQUIREMENTS.md §11.1 / README.md 文件结构图 / lint-skill.yml 第 40-49 行
@@ -57,7 +57,7 @@
 #### [HIGH] 缺少 assets/templates/ 目录（8 个文档模板）
 - `problem-statement.md`、`architecture-context.md`、`scope-doc.md`、`metrics-framework.md`
 - `interview-guide.md`、`pmf-assessment.md`、`bottleneck-audit.md`、`moat-narrative.md`
-- **注意**：这些是**文档内容模板**（用户产出的空白模板），不是现有 `.comate/skills/opc-starter-kit/templates/` 中的 UI/报告模板
+- **注意**：这些是**文档内容模板**（用户产出的空白模板），不是现有 `.your AI coding tool/skills/opc-starter-kit/templates/` 中的 UI/报告模板
 - **建议**：创建 `assets/templates/` 并填充所有 8 个模板
 
 #### [MEDIUM] 缺少其他文件
@@ -161,9 +161,9 @@ SKILL_USER_GUIDE.md 命令表比 skill.md 多出以下命令：
 skill.md 的命令表应补全这些命令。
 
 #### [MEDIUM] 文件结构描述不一致
-README.md 文件结构图（第 196-234 行）和 README.zh-CN.md（第 196-235 行）描述的结构与 `.comate/skills/opc-starter-kit/` 实际结构不同：
+README.md 文件结构图（第 196-234 行）和 README.zh-CN.md（第 196-235 行）描述的结构与 `.your AI coding tool/skills/opc-starter-kit/` 实际结构不同：
 - 两个 README 描述的是项目根目录的扁平结构
-- 实际有一个 `.comate/skills/opc-starter-kit/` 子目录包含了 skill.md 和 templates/
+- 实际有一个 `.your AI coding tool/skills/opc-starter-kit/` 子目录包含了 skill.md 和 templates/
 
 ---
 
@@ -222,7 +222,7 @@ README.md 文件结构图（第 196-234 行）和 README.zh-CN.md（第 196-235 
 
 ### B5. De-Claude-ification 审计
 
-对 **skill 核心文件**（`.comate/skills/opc-starter-kit/skill.md`、`README.md`）的审计结果：
+对 **skill 核心文件**（`.your AI coding tool/skills/opc-starter-kit/skill.md`、`README.md`）的审计结果：
 
 | 文件 | CLAUDE.md | Claude Code | Claude Cowork | Claude Chat | MCP |
 |------|-----------|-------------|---------------|-------------|-----|
@@ -290,7 +290,7 @@ README.md 文件结构图（第 196-234 行）和 README.zh-CN.md（第 196-235 
 ### 优先级 1 — 必须立即修复（阻塞性）
 
 1. **创建项目根目录 `SKILL.md`**，并添加 YAML frontmatter
-   - 将 `.comate/skills/opc-starter-kit/skill.md` 内容提升到根目录
+   - 将 `.your AI coding tool/skills/opc-starter-kit/skill.md` 内容提升到根目录
    - 添加 `description`、`name` 等 frontmatter 字段
    - 同步更新 lint-skill.yml 中的路径
 

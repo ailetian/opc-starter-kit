@@ -1,4 +1,4 @@
-# 工具适配映射表
+﻿# 工具适配映射表
 
 > 本节提供 opc-starter-kit 在不同 AI 工具平台上的概念映射和使用说明。
 > 遵循 De-Claude-ification 策略（参见 REQUIREMENTS.md §11.3）。
@@ -21,15 +21,15 @@ opc-starter-kit 使用以下通用术语替代特定平台的专有名词：
 
 ## 平台适配说明
 
-### Comate（百度）
+### your AI coding tool（百度）
 
-| opc-starter-kit 概念 | Comate 等效 |
+| opc-starter-kit 概念 | your AI coding tool 等效 |
 |---------------|------------|
-| AI 编程工具 | Comate IDE 插件 / 快码 |
-| AI 对话 | Comate 对话框 |
-| 项目记忆文件 | 项目目录下的 `.comate/project-memory.md` |
-| 子窗口 | 打开新 Comate 会话 |
-| Skill 安装路径 | `.comate/skills/opc-starter-kit/` |
+| AI 编程工具 | your AI coding tool IDE 插件 / 快码 |
+| AI 对话 | your AI coding tool 对话框 |
+| 项目记忆文件 | 项目目录下的 `.your AI coding tool/project-memory.md` |
+| 子窗口 | 打开新 your AI coding tool 会话 |
+| Skill 安装路径 | `.your AI coding tool/skills/opc-starter-kit/` |
 
 ### DeepSeek
 
@@ -96,7 +96,7 @@ opc-starter-kit 是一个基于 Markdown 的 Skill 文件，不依赖特定平�
 1. 将 `SKILL.md` 放置在你的项目的 AI 工具可读取的位置
 2. 将 `references/` 目录和 `scripts/` 目录一并复制
 3. 确保 AI 工具能够在对话中读取 `SKILL.md` 的内容
-4. 在支持 Skill 系统的工具（如 Comate）中，将整个目录放到 `.comate/skills/opc-starter-kit/`
+4. 在支持 Skill 系统的工具（如 your AI coding tool）中，将整个目录放到 `.your AI coding tool/skills/opc-starter-kit/`
 
 ### 状态和产出文件
 

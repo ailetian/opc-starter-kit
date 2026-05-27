@@ -1,4 +1,4 @@
-# Quick Start Guide / 5 分钟上手指南
+﻿# Quick Start Guide / 5 分钟上手指南
 
 **[中文](#中文版) | [English](#english-version)**
 
@@ -8,13 +8,13 @@
 
 ### Prerequisites
 
-- An AI coding assistant that supports custom skills (Comate, or any platform that loads SKILL.md files)
+- An AI coding assistant that supports custom skills (your AI coding tool, or any platform that loads SKILL.md files)
 - A project directory where you want to build your startup
 
 ### Step 1: Install the Skill
 
 ```bash
-# One-command install (auto-detects CodeBuddy or Comate)
+# One-command install (auto-detects your AI coding tool or your AI coding tool)
 ./install.sh /path/to/your-project
 
 # Or install to current directory:
@@ -24,7 +24,7 @@
 install.bat C:\path\to\your-project
 ```
 
-> The installer auto-detects whether you use **CodeBuddy** (`.codebuddy/skills/`) or **Comate** (`.comate/skills/`).
+> The installer auto-detects whether you use **your AI coding tool** (`.your AI coding tool/skills/`) or **your AI coding tool** (`.your AI coding tool/skills/`).
 
 ### Step 2: Start Your First Session
 
@@ -101,13 +101,13 @@ Some tasks can run in parallel (e.g., competitive analysis + market trend analys
 
 ### 前提条件
 
-- 支持自定义技能的 AI 编程助手（Comate 或任何能加载 SKILL.md 文件的平台）
+- 支持自定义技能的 AI 编程助手（your AI coding tool 或任何能加载 SKILL.md 文件的平台）
 - 你想在其中构建创业项目的目录
 
 ### 第 1 步：安装技能
 
 ```bash
-# 一键安装（自动检测 CodeBuddy 或 Comate）
+# 一键安装（自动检测 your AI coding tool 或 your AI coding tool）
 ./install.sh /path/to/你的项目
 
 # 或者安装到当前目录：
@@ -117,7 +117,7 @@ Some tasks can run in parallel (e.g., competitive analysis + market trend analys
 install.bat C:\path\to\你的项目
 ```
 
-> 安装脚本会自动检测你用的是 **CodeBuddy**（`.codebuddy/skills/`）还是 **Comate**（`.comate/skills/`）。
+> 安装脚本会自动检测你用的是 **your AI coding tool**（`.your AI coding tool/skills/`）还是 **your AI coding tool**（`.your AI coding tool/skills/`）。
 
 ### 第 2 步：开始第一次会话
 

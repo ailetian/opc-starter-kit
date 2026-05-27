@@ -63,23 +63,19 @@ opc-starter-kit 就是那个敢跟你说真话的合伙人。它把一套**四�
 
 ## 🚀 安装
 
-### 最简单的方式——把链接发给你的 AI IDE：
+把链接发给你的 AI IDE，说 **"帮我安装这个 skill"**：
 
 ```
 https://github.com/ailetian/opc-starter-kit
 ```
 
-对 IDE 说：**"帮我安装这个 skill"**——它会自动读取 `SKILL.md` 完成安装。
-
-### 或者用命令行：
+或用命令行：
 
 ```bash
 npx skills add ailetian/opc-starter-kit -y
 ```
 
 然后输入 **`opc`** 开始使用。
-
-> 支持 **CodeBuddy、Claude Code、Cursor、Windsurf、Copilot、通义灵码、Kimi** 等所有兼容 AgentSkills 的工具。
 
 ---
 

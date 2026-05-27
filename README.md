@@ -63,23 +63,19 @@ At every gate: **🔴 Red Team** (devil's advocate) + **🟢 Green Team** (exit 
 
 ## 🚀 Install
 
-### The Easy Way — Just send this link to your AI IDE:
+Send this link to your AI IDE and say **"Install this skill"**:
 
 ```
 https://github.com/ailetian/opc-starter-kit
 ```
 
-Tell your IDE: **"Install this skill"** — it reads `SKILL.md` and handles the rest.
-
-### Or use CLI:
+Or use CLI:
 
 ```bash
 npx skills add ailetian/opc-starter-kit -y
 ```
 
 Then type **`opc`** to start.
-
-> Works with **CodeBuddy, Claude Code, Cursor, Windsurf, Copilot, 通义灵码, Kimi** and any AgentSkills-compatible tool.
 
 ---
 
