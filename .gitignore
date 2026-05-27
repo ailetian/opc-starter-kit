@@ -1,0 +1,20 @@
+# IDE / local install artifacts (these are installed by the user, not part of the repo)
+.comate/
+.codebuddy/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+
+# Logs & temp
+*.zip
+logs-*.zip
+
+# Raw source materials (not needed in repo, see links in README)
+anthropic_opc手册.txt
+docs/
+

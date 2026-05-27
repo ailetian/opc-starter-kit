@@ -1,0 +1,119 @@
+﻿name: Lint Skill Files
+
+on:
+  push:
+    paths:
+      - '.comate/skills/opc-starter-kit/**'
+  pull_request:
+    paths:
+      - '.comate/skills/opc-starter-kit/**'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check skill.md exists
+        run: |
+          SKILL_DIR=".comate/skills/opc-starter-kit"
+          if [ ! -f "$SKILL_DIR/skill.md" ]; then
+            echo "::error::$SKILL_DIR/skill.md not found!"
+            exit 1
+          fi
+          echo "skill.md found: OK"
+
+      - name: Check skill.md line count
+        run: |
+          SKILL_DIR=".comate/skills/opc-starter-kit"
+          lines=$(wc -l < $SKILL_DIR/skill.md)
+          if [ "$lines" -gt 500 ]; then
+            echo "::error::skill.md has $lines lines (max 500). Move content to references/."
+            exit 1
+          fi
+          echo "skill.md line count: $lines (OK)"
+
+      - name: Check skill.md frontmatter
+        run: |
+          SKILL_DIR=".comate/skills/opc-starter-kit"
+          if ! head -1 $SKILL_DIR/skill.md | grep -q "^---"; then
+            echo "::error::skill.md must start with YAML frontmatter (---)"
+            exit 1
+          fi
+          echo "skill.md frontmatter: OK"
+
+      - name: Check references/ in skill dir
+        run: |
+          SKILL_DIR=".comate/skills/opc-starter-kit"
+          required_files=(
+            "references/stage-1-ideation.md"
+            "references/stage-2-mvp.md"
+            "references/stage-3-launch.md"
+            "references/stage-4-scale.md"
+            "references/anti-confirmation.md"
+            "references/exit-criteria.md"
+            "references/questioning-guide.md"
+            "references/tool-adaptations.md"
+          )
+          missing=0
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$SKILL_DIR/$file" ]; then
+              echo "::error::Missing reference file: $SKILL_DIR/$file"
+              missing=$((missing + 1))
+            fi
+          done
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing reference file(s) missing!"
+            exit 1
+          else
+            echo "All reference files present: OK"
+          fi
+
+      - name: Check for Claude-specific terms
+        run: |
+          SKILL_DIR=".comate/skills/opc-starter-kit"
+          # Exclude tool-adaptations.md — it intentionally maps Claude terms to generic equivalents
+          claude_terms=("CLAUDE\.md" "Claude Code" "Claude Cowork" "Claude Chat" "\bMCP\b")
+          found=0
+          for term in "${claude_terms[@]}"; do
+            matches=$(grep -rnE "$term" $SKILL_DIR/skill.md $SKILL_DIR/references/ \
+              --exclude="tool-adaptations.md" 2>/dev/null || true)
+            if [ -n "$matches" ]; then
+              echo "::error::Found Claude-specific term '$term' — use generic equivalent instead:"
+              echo "$matches"
+              found=$((found + 1))
+            fi
+          done
+          if [ "$found" -gt 0 ]; then
+            echo "::error::$found Claude-specific term(s) found. See de-Claude-ification policy."
+            exit 1
+          else
+            echo "No Claude-specific terms found (tool-adaptations.md excluded — it's a mapping table): OK"
+          fi
+
+      - name: Check template files exist
+        run: |
+          SKILL_DIR=".comate/skills/opc-starter-kit"
+          required_templates=(
+            "assets/templates/problem-statement.md"
+            "assets/templates/architecture-context.md"
+            "assets/templates/scope-doc.md"
+            "assets/templates/metrics-framework.md"
+            "assets/templates/interview-guide.md"
+            "assets/templates/pmf-assessment.md"
+            "assets/templates/bottleneck-audit.md"
+            "assets/templates/moat-narrative.md"
+          )
+          missing=0
+          for file in "${required_templates[@]}"; do
+            if [ ! -f "$SKILL_DIR/$file" ]; then
+              echo "::error::Missing template file: $SKILL_DIR/$file"
+              missing=$((missing + 1))
+            fi
+          done
+          if [ "$missing" -gt 0 ]; then
+            echo "::error::$missing template file(s) missing!"
+            exit 1
+          else
+            echo "All template files present: OK"
+          fi

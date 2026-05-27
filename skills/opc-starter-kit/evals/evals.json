@@ -1,0 +1,277 @@
+{
+  "name": "opc-starter-kit evals",
+  "version": "2.0",
+  "description": "Test cases for opc-starter-kit skill behavioral validation",
+  "tests": [
+    {
+      "id": "eval-001",
+      "name": "新项目初始化",
+      "description": "用户首次使用 opc start / opc 启动，应正确进入想法阶段并创建状态文件",
+      "input": "opc start，我的项目是给独立开发者用的发票管理工具（等价于：opc 启动，我的项目是给独立开发者用的发票管理工具）",
+      "expected_behavior": [
+        "创建 .opc-state.json",
+        "current_stage 设为 idea",
+        "stage_status 设为 in_progress",
+        "展示仪表盘",
+        "引导进入想法阶段第一步（打磨问题陈述）"
+      ],
+      "stage": "init"
+    },
+    {
+      "id": "eval-002",
+      "name": "5次访谈后触发绿队关卡",
+      "description": "完成5次客户访谈后，应触发双清单对比和绿队退出标准检查",
+      "input": "用户表示已完成5次客户访谈",
+      "expected_behavior": [
+        "执行双清单对比（支持假设 vs 挑战假设）",
+        "如果不支持清单明显更长，追问不对称原因",
+        "检查退出标准：≥5次客户对话 + 竞品格局完成 + 红队通过",
+        "如未全部满足，告知缺什么"
+      ],
+      "stage": "idea"
+    },
+    {
+      "id": "eval-003",
+      "name": "PMF判定 — Sean Ellis测试",
+      "description": "用户宣称PMF，应执行Sean Ellis测试+假阳性排查+三角验证",
+      "input": "opc pmf（等价于：opc 我是不是 PMF 了）",
+      "expected_behavior": [
+        "触发PMF判定流程",
+        "发送Sean Ellis问题模板",
+        "要求提供数据",
+        "执行假阳性排查（注册但无激活/收入但无留存/初始热度但无重复）",
+        "执行三角验证（故事+数字+反例）",
+        "执行努力测试（被推 vs 被拉）"
+      ],
+      "stage": "mvp"
+    },
+    {
+      "id": "eval-004",
+      "name": "红队关卡不可跳过",
+      "description": "用户尝试跳过红队关卡，应被拒绝",
+      "input": "opc skip（在红队关卡前）（等价于：opc 跳过当前环节（在红队关卡前））",
+      "expected_behavior": [
+        "告知用户红队关卡不可跳过",
+        "解释为什么红队关卡是必需的",
+        "不允许进入下一阶段"
+      ],
+      "stage": "any"
+    },
+    {
+      "id": "eval-005",
+      "name": "跳过环节记录到决策日志",
+      "description": "用户跳过非红队环节，应记录到decisions.md和risk_profile",
+      "input": "opc skip（在微交付步骤中）（等价于：opc 跳过当前环节（在微交付步骤中））",
+      "expected_behavior": [
+        "告知跳过内容和可能后果",
+        "记录到 decisions.md",
+        "更新 risk_profile.skip_count",
+        "后续阶段可能引用跳过记录"
+      ],
+      "stage": "any"
+    },
+    {
+      "id": "eval-006",
+      "name": "非SaaS项目PMF指标调整",
+      "description": "硬件项目应使用预订单替代日活留存作为PMF信号",
+      "input": "opc start，我的项目是硬件产品（等价于：opc 启动，我的项目是硬件产品）",
+      "expected_behavior": [
+        "project_type 设为 hardware",
+        "在PMF判定时使用调整后的退出标准",
+        "预订单替代日活留存作为PMF信号"
+      ],
+      "stage": "init"
+    },
+    {
+      "id": "eval-007",
+      "name": "状态文件丢失时从docs/恢复",
+      "description": ".opc-state.json不存在时，扫描docs/推断阶段",
+      "input": "opc（状态文件丢失，但docs/中有stage-2-completion-report.md）",
+      "expected_behavior": [
+        "扫描 docs/ 产物",
+        "找到 stage-2-completion-report.md",
+        "推断当前阶段为 mvp（已完成）或 launch（准备进入）",
+        "展示推断结果和置信度"
+      ],
+      "stage": "recovery"
+    },
+    {
+      "id": "eval-008",
+      "name": "范围蔓延压力测试",
+      "description": "用户提议新增功能，应触发范围压力测试",
+      "input": "opc scope-check（等价于：opc 这个功能该不该加）",
+      "expected_behavior": [
+        "触发范围压力测试",
+        "追问：几个用户明确要的？",
+        "检查当前范围文档",
+        "给出评估（通过/不通过）"
+      ],
+      "stage": "mvp"
+    },
+    {
+      "id": "eval-009",
+      "name": "被动触发检测 — 未验证就建造",
+      "description": "非opc对话中用户请求写代码，应轻量提醒",
+      "input": "[非opc对话] 帮我写XXX的MVP",
+      "expected_behavior": [
+        "检测到未验证就建造模式",
+        "输出轻量提醒：'还没过opc想法验证'",
+        "不阻止用户继续",
+        "每次对话最多提醒一次"
+      ],
+      "stage": "passive"
+    },
+    {
+      "id": "eval-010",
+      "name": "用户连续拒绝3次后降级为轻量模式",
+      "description": "用户连续拒绝3次opc建议后，应减少主动提醒",
+      "input": "用户连续3次拒绝被动触发提醒",
+      "expected_behavior": [
+        "opc_passive_nudge_rejected_count 达到3",
+        "降级为轻量模式",
+        "减少主动提醒频率",
+        "仍保留仪表盘和核心门控功能"
+      ],
+      "stage": "passive"
+    },
+    {
+      "id": "eval-011",
+      "name": "事后诊断模式",
+      "description": "已建造产品的项目，应倒序检查跳过了什么",
+      "input": "opc retrospective（等价于：opc 事后诊断）",
+      "expected_behavior": [
+        "扫描 docs/ 产物",
+        "推断已覆盖和跳过的阶段",
+        "展示阶段跳过风险图",
+        "给出补课建议",
+        "不指责用户"
+      ],
+      "stage": "retrospective"
+    },
+    {
+      "id": "eval-012",
+      "name": "内部一致性检测",
+      "description": "阶段转换时检测关键假设是否漂移",
+      "input": "用户即将从想法阶段进入MVP阶段（problem-hypothesis和pmf-assessment中的用户画像不同）",
+      "expected_behavior": [
+        "交叉比对前序阶段产物",
+        "检测到用户画像漂移",
+        "主动提示并要求确认是'市场反馈驱动'还是'认知漂移'"
+      ],
+      "stage": "transition"
+    },
+    {
+      "id": "eval-013",
+      "name": "时间感知 — 阶段完成过快",
+      "description": "想法阶段在1天内完成时，应附加提醒",
+      "input": "想法阶段所有步骤在3小时内完成",
+      "expected_behavior": [
+        "检测到阶段完成速度异常快",
+        "在红队环节附加时间感知提醒",
+        "质疑是否真的接触了5个真实客户"
+      ],
+      "stage": "idea"
+    },
+    {
+      "id": "eval-014",
+      "name": "安全审查 — MVP编码前提醒",
+      "description": "MVP阶段编码开始前，应触发安全提醒",
+      "input": "用户准备开始MVP编码",
+      "expected_behavior": [
+        "主动提醒4个安全维度",
+        "确认架构上下文文档已加载",
+        "提醒安全审查不替代专业审计"
+      ],
+      "stage": "mvp"
+    },
+    {
+      "id": "eval-015",
+      "name": "安全合规升级 — 发布阶段",
+      "description": "发布阶段必须执行安全合规升级检查",
+      "input": "用户进入发布阶段",
+      "expected_behavior": [
+        "触发安全合规升级模块",
+        "检查数据保护/访问控制/合规要求/企业买家清单",
+        "生成 security-compliance-checklist.md"
+      ],
+      "stage": "launch"
+    },
+    {
+      "id": "eval-016",
+      "name": "一页纸生成",
+      "description": "生成可分享的项目当前状态摘要",
+      "input": "opc one-pager（等价于：opc 一页纸）",
+      "expected_behavior": [
+        "生成紧凑摘要",
+        "包含：做什么 + 卡在哪 + 最有信心的发现 + 最不确定的事 + 需要什么帮助",
+        "格式适合截图分享"
+      ],
+      "stage": "any"
+    },
+    {
+      "id": "eval-017",
+      "name": "盲审报告生成",
+      "description": "生成剥离身份信息的盲审报告",
+      "input": "opc blind-review（等价于：opc 生成盲审报告）",
+      "expected_behavior": [
+        "剥离创始人身份信息",
+        "生成问题陈述+假设+证据+不确定问题的摘要",
+        "保存为 docs/peer-review-package.md"
+      ],
+      "stage": "any"
+    },
+    {
+      "id": "eval-018",
+      "name": "子窗口模式 — 任务执行",
+      "description": "子窗口加载任务文件并执行",
+      "input": "opc task task-competitive-analysis.md（等价于：opc 执行任务 task-competitive-analysis.md）",
+      "expected_behavior": [
+        "加载任务文件",
+        "获得完整上下文",
+        "完成一个任务",
+        "产出文件",
+        "输出摘要"
+      ],
+      "stage": "subwindow"
+    },
+    {
+      "id": "eval-019",
+      "name": "决策日志自动维护",
+      "description": "关键决策应自动追加到 decisions.md",
+      "input": "用户选择跳过环节或拒绝红队建议",
+      "expected_behavior": [
+        "自动追加记录到 docs/decisions.md",
+        "包含时间、阶段、决策、理由",
+        "后续阶段可能引用历史决策"
+      ],
+      "stage": "any"
+    },
+    {
+      "id": "eval-020",
+      "name": "护城河压力测试",
+      "description": "模拟5000万美元竞品入侵",
+      "input": "opc moat-test（等价于：opc 护城河压力测试）",
+      "expected_behavior": [
+        "执行T=0/T=30/T=90三时间点推演",
+        "评估每个时间点的防御能力",
+        "更新 moat-scorecard.md"
+      ],
+      "stage": "scale"
+    }
+  ],
+  "eval_config": {
+    "pass_criteria": {
+      "structural": "All structural checks (skill.md, references/, templates/, scripts/) must pass",
+      "behavioral": "Behavioral tests are validated manually against expected_behavior",
+      "threshold": ">= 80% of automated checks must pass for overall PASS"
+    },
+    "fail_criteria": {
+      "skill_md_missing": "skill.md not found in skill directory",
+      "frontmatter_missing": "YAML frontmatter missing or malformed",
+      "references_missing": "One or more required reference files missing",
+      "templates_missing": "One or more required template files missing",
+      "claude_terms": "Claude-specific terms found in non-mapping files"
+    },
+    "run_command": "python scripts/run_evals.py --verbose"
+  }
+}
