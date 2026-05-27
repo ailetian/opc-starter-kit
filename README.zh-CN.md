@@ -63,17 +63,32 @@ opc-starter-kit 就是那个敢跟你说真话的合伙人。它把一套**四�
 
 ## 🚀 安装
 
+### 一键安装（CodeBuddy / Claude Code / Cursor / Windsurf）
+
+```bash
+# 直接从 GitHub 安装——无需 clone
+npx skills add ailetian/opc-starter-kit --agent codebuddy -y
+```
+
+其他 Agent：
+
+```bash
+npx skills add ailetian/opc-starter-kit --agent claude-code -y
+npx skills add ailetian/opc-starter-kit --agent cursor -y
+npx skills add ailetian/opc-starter-kit --agent windsurf -y
+```
+
+### 手动安装
+
 ```bash
 git clone https://github.com/ailetian/opc-starter-kit.git && cd opc-starter-kit
-
-# 一行命令：
 ./install.sh /path/to/你的项目     # macOS / Linux
 install.bat C:\path\to\你的项目     # Windows
 ```
 
-打开 AI 编程工具，输入 **`opc`**，skill 自动接管。
+然后输入 **`opc`**——skill 自动接管。
 
-> **CodeBuddy、Cursor、Windsurf、Copilot、通义灵码、Kimi** 全平台支持。详见[适配指南](skills/opc-starter-kit/references/tool-adaptations.md)。
+> **Copilot、通义灵码、Kimi** 等平台：详见[适配指南](skills/opc-starter-kit/references/tool-adaptations.md)。
 
 ---
 
