@@ -67,12 +67,6 @@ opc-starter-kit 就是那个敢跟你说真话的合伙人。它把一套**四�
 https://github.com/ailetian/opc-starter-kit
 ```
 
-或用命令行：
-
-```bash
-npx skills add ailetian/opc-starter-kit -y
-```
-
 然后输入 **`opc`** 开始使用。
 
 ---

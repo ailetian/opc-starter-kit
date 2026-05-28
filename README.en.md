@@ -67,12 +67,6 @@ Send this link to your AI IDE and say **"Install this skill"**:
 https://github.com/ailetian/opc-starter-kit
 ```
 
-Or use CLI:
-
-```bash
-npx skills add ailetian/opc-starter-kit -y
-```
-
 Then type **`opc`** to start.
 
 ---
