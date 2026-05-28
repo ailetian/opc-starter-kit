@@ -20,11 +20,11 @@ WITH this skill:
 ─────────────────────────────────────────────────
 Day 1:   "I have an idea!" → opc
 Day 1:   → Skill: "Let's test if this problem is real first."
-Day 1-3: → Problem hypothesis refinement → docs/01-problem-statement.md
+Day 1-3: → Problem hypothesis refinement → docs/problem-statement.md
 Day 3-5: → Devil's advocate challenges your assumption
-Day 5-7: → Competitive landscape → docs/02-competitive-map.md
+Day 5-7: → Competitive landscape → docs/competitive-map.md
 Day 7-14:→ Customer interviews with structured questions
-Day 14:  → 5 interviews synthesized → docs/05-problem-hypothesis.md
+Day 14:  → 5 interviews synthesized → docs/problem-hypothesis.md
 Day 14:  → Exit criteria check: "Do you have enough signal?"
 Day 15:  → Only NOW do you start building
 Day 45:  → Product built on validated evidence, not faith
@@ -111,7 +111,7 @@ Week 6:  12 features, none polished
 
 WITH this skill:
 ─────────────────────────────────────────────────
-Week 1:  MVP scope locked: docs/07-scope-doc.md
+Week 1:  MVP scope locked: docs/scope-doc.md
          → Core: 3 features
          → Explicitly NOT doing: dark mode, CSV export, notifications
          → Feature addition criteria: "Enough users have told us

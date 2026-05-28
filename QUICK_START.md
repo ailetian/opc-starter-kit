@@ -8,23 +8,18 @@
 
 ### Prerequisites
 
-- An AI coding assistant that supports custom skills (your AI coding tool, or any platform that loads SKILL.md files)
+- An AI coding assistant that supports custom skills (any platform that loads SKILL.md files)
 - A project directory where you want to build your startup
 
 ### Step 1: Install the Skill
 
-```bash
-# One-command install (auto-detects your AI coding tool or your AI coding tool)
-./install.sh /path/to/your-project
+Send this link to your AI IDE and say **"Install this skill"**:
 
-# Or install to current directory:
-./install.sh
-
-# Windows:
-install.bat C:\path\to\your-project
+```
+https://github.com/ailetian/opc-starter-kit
 ```
 
-> The installer auto-detects whether you use **your AI coding tool** (`.your AI coding tool/skills/`) or **your AI coding tool** (`.your AI coding tool/skills/`).
+Your IDE will automatically place the skill files in the appropriate directory.
 
 ### Step 2: Start Your First Session
 
@@ -45,18 +40,20 @@ The skill will:
 opc I have an idea — an invoice management tool for indie developers
 ```
 
-The skill will guide you through problem hypothesis refinement. You'll produce your first document: `docs/01-problem-statement.md`.
+The skill will guide you through problem hypothesis refinement. You'll produce your first document: `docs/problem-statement.md`.
 
 ### Step 4: Follow the Checkpoints
 
 The skill gives you one task at a time. After each task completes, a document is auto-saved to `docs/`. You always know where you are:
 
 ```
-Ideation (2/4 complete):
-  [x] Problem statement     → docs/01-problem-statement.md
-  [x] Competitive landscape  → docs/02-competitive-map.md
+Ideation (2/6 complete):
+  [x] Problem statement     → docs/problem-statement.md
+  [x] Competitive landscape  → docs/competitive-map.md
+  [ ] Trend analysis         → Not started
   [ ] Interview guide        → Not started
   [ ] Interview synthesis    → Not started
+  [ ] Lightweight prototype  → Not started
 ```
 
 ### Step 5: Resume Anytime
@@ -101,23 +98,18 @@ Some tasks can run in parallel (e.g., competitive analysis + market trend analys
 
 ### 前提条件
 
-- 支持自定义技能的 AI 编程助手（your AI coding tool 或任何能加载 SKILL.md 文件的平台）
+- 支持自定义技能的 AI 编程助手（任何能加载 SKILL.md 文件的平台）
 - 你想在其中构建创业项目的目录
 
 ### 第 1 步：安装技能
 
-```bash
-# 一键安装（自动检测 your AI coding tool 或 your AI coding tool）
-./install.sh /path/to/你的项目
+把链接发给你的 AI IDE，说 **"帮我安装这个 skill"**：
 
-# 或者安装到当前目录：
-./install.sh
-
-# Windows：
-install.bat C:\path\to\你的项目
+```
+https://github.com/ailetian/opc-starter-kit
 ```
 
-> 安装脚本会自动检测你用的是 **your AI coding tool**（`.your AI coding tool/skills/`）还是 **your AI coding tool**（`.your AI coding tool/skills/`）。
+IDE 会自动将 skill 文件放置到对应目录。
 
 ### 第 2 步：开始第一次会话
 
@@ -138,18 +130,20 @@ opc
 opc 我有个想法 — 做一个给独立开发者用的发票管理工具
 ```
 
-技能会引导你打磨问题假设。你的第一个文档自动产出：`docs/01-problem-statement.md`。
+技能会引导你打磨问题假设。你的第一个文档自动产出：`docs/problem-statement.md`。
 
 ### 第 4 步：跟着检查站走
 
 技能每次只给你一个任务。每个任务完成后，文档自动保存到 `docs/`。你随时知道自己在哪：
 
 ```
-想法阶段（2/4 完成）：
-  [x] 问题陈述打磨  → docs/01-problem-statement.md
-  [x] 竞品格局分析  → docs/02-competitive-map.md
+想法阶段（2/6 完成）：
+  [x] 问题陈述打磨  → docs/problem-statement.md
+  [x] 竞品格局分析  → docs/competitive-map.md
+  [ ] 趋势分析      → 待开始
   [ ] 客户访谈引导  → 待开始
   [ ] 访谈后合成    → 待开始
+  [ ] 轻量原型      → 待开始
 ```
 
 ### 第 5 步：随时回来

@@ -50,10 +50,10 @@ def check_state_file():
 
 
 def check_skill_md():
-    """Check skill.md quality."""
-    skill_md = SKILL_DIR / "skill.md"
+    """Check SKILL.md quality."""
+    skill_md = SKILL_DIR / "SKILL.md"
     if not skill_md.exists():
-        return False, "skill.md not found"
+        return False, "SKILL.md not found"
 
     with open(skill_md, "r", encoding="utf-8") as f:
         content = f.read()
@@ -75,7 +75,7 @@ def check_skill_md():
 
     if checks:
         return False, "; ".join(checks)
-    return True, f"skill.md OK ({len(lines)} lines)"
+    return True, f"SKILL.md OK ({len(lines)} lines)"
 
 
 def check_references():

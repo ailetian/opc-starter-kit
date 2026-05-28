@@ -155,8 +155,10 @@ opc-starter-kit：
 |------|---------|---------|
 | 打磨问题陈述 | 把模糊想法变成可测试的假设 | `docs/problem-statement.md` |
 | 竞品格局分析 | 看清谁在解决这个问题 | `docs/competitive-map.md` |
+| 趋势分析 | 判断外部趋势是顺风还是逆风 | `docs/trend-analysis.md` |
 | 客户访谈引导 | 找对人、问对话、听懂话 | `docs/interview-guide.md` |
 | 访谈后合成 | 把对话变成证据 | `docs/problem-hypothesis.md` |
+| 轻量原型 | 5人试用验证方案方向 | `docs/lightweight-prototype.md` |
 
 **红队关卡**：以"吝啬的投资人"角色，从三个维度为竞品写出"为什么他们会赢"的论证。通过三角验证（故事+数字+反例）检测证据一致性。
 
@@ -196,6 +198,8 @@ opc-starter-kit：
 | 领域知识外化 | 把创始人脑子里的东西编码成资产 | `docs/domain-knowledge.md` |
 | 工作流锁定审计 | 看客户到底有多难离开你 | `docs/workflow-audit.md` |
 | 护城河叙事 | 给投资人和大客户看的护城河论证 | `docs/moat-narrative.md` |
+| GTM 引擎搭建 | 从创始人亲自卖到可复制增长 | `docs/gtm-engine.md` |
+| 企业基础设施 | 让小团队拥有大组织级别的支持姿态 | `docs/enterprise-infra.md` |
 
 **护城河积分卡**：持续追踪领域知识壁垒 / 工作流锁定深度 / 数据飞轮复利三个维度。
 
@@ -308,14 +312,13 @@ opc-starter-kit 的任务文件设计天然支持并行。当主控窗口告诉�
 ## 启动
 
 ```
-在你的项目目录下：
+把链接发给你的 AI IDE，说"帮我安装这个 skill"：
+https://github.com/ailetian/opc-starter-kit
 
-1. 下载/克隆本仓库
-2. 把 `.your AI coding tool/skills/opc-starter-kit/` 目录复制到你的项目下的 `.your AI coding tool/skills/opc-starter-kit/`
-3. 打开对话框，输入：
-   opc 启动
-   我的项目：[一句话]
-3. opc-starter-kit 会判断你的阶段，展示仪表盘，开始第一个任务
+然后输入：opc 启动
+我的项目：[一句话]
+
+opc-starter-kit 会判断你的阶段，展示仪表盘，开始第一个任务
 ```
 
 你之后每次回来，都只需要输入一个词：**opc**。

@@ -1,7 +1,9 @@
 # IDE / local install artifacts (these are installed by the user, not part of the repo)
 .comate/
 .codebuddy/
-.github/
+
+# GitHub CI workflows (optional, not required for skill)
+.github/workflows/
 
 # OS
 .DS_Store

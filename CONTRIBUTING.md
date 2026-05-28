@@ -59,10 +59,10 @@ Using a non-Claude AI tool? Help us expand `references/tool-adaptations.md`:
 
 ### Language
 
-- Primary documentation: English
-- Secondary documentation: Chinese (Simplified)
-- All contributions should be in English or bilingual (English + Chinese)
-- If you're contributing in Chinese only, we'll help with the English translation
+- Primary documentation: Chinese (Simplified)
+- Secondary documentation: English
+- All contributions should be in Chinese or bilingual (Chinese + English)
+- If you're contributing in English only, we'll help with the Chinese translation
 
 ### Pull Request Process
 
