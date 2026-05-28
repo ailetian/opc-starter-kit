@@ -73,12 +73,14 @@
     {
       "id": "eval-006",
       "name": "非SaaS项目PMF指标调整",
-      "description": "硬件项目应使用预订单替代日活留存作为PMF信号",
+      "description": "硬件项目应使用预订单替代日活留存作为PMF信号，想法阶段退出标准自动适配",
       "input": "opc start，我的项目是硬件产品（等价于：opc 启动，我的项目是硬件产品）",
       "expected_behavior": [
         "project_type 设为 hardware",
         "在PMF判定时使用调整后的退出标准",
-        "预订单替代日活留存作为PMF信号"
+        "预订单替代日活留存作为PMF信号",
+        "想法阶段轻量原型适配为低保真原型/手绘方案",
+        "访谈对象建议侧重供应链和渠道"
       ],
       "stage": "init"
     },
