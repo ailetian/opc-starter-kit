@@ -3,9 +3,7 @@
 > *你的 AI 一个下午就能造出任何东西。正因如此，你更需要一个检查站，拦住它别造错东西。*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![4 Stages](https://img.shields.io/badge/阶段-4-green)]()
-[![27 Failure Modes Guarded](https://img.shields.io/badge/防御失败模式-27-orange)]()
-[![Based on Anthropic Founder's Playbook](https://img.shields.io/badge/来源-Anthropic%20创始人行动手册(2026.05)-blue)](https://claude.com/blog/the-founders-playbook)
+[![Anthropic Founder's Playbook](https://img.shields.io/badge/基于-Anthropic%20创始人行动手册(2026.05)-blue)](https://claude.com/blog/the-founders-playbook)
 
 中文 | **[English](README.en.md)**
 

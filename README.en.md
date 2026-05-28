@@ -3,9 +3,7 @@
 > *Your AI can build anything in an afternoon. That's exactly why you need a checkpoint before it builds the wrong thing.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![4 Stages](https://img.shields.io/badge/Stages-4-green)]()
-[![27 Failure Modes Guarded](https://img.shields.io/badge/Failure%20Modes%20Guarded-27-orange)]()
-[![Based on Anthropic Founder's Playbook](https://img.shields.io/badge/Source-Anthropic%20Founder's%20Playbook%20(2026.05)-blue)](https://claude.com/blog/the-founders-playbook)
+[![Anthropic Founder's Playbook](https://img.shields.io/badge/Source-Anthropic%20Founder's%20Playbook%20(2026.05)-blue)](https://claude.com/blog/the-founders-playbook)
 
 **[中文](README.md)** | English
 
